@@ -23,13 +23,13 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: checkout code
-          uses: actions/checkout@v4
+          uses: ./my-action
 
-        - name: docker setup
-          uses: docker/setup-buildx-action@v3 
+        #- name: docker setup
+        #  uses: docker/setup-buildx-action@v3 
 
-        - name: docker pull ${{ env.image_name }}
-          run: docker pull $image_name
+        #- name: docker pull ${{ env.image_name }}
+        # run: docker pull $image_name
         
     deploy:
         needs: first_job

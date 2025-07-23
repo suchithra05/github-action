@@ -1,0 +1,19 @@
+name: docker handler
+description: pulling image
+
+inputs:
+  image_name:
+    description: Docker image name
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: checkout code
+      uses: actions/checkout@v4
+
+    - name: docker setup
+      uses: docker/setup-buildx-action@v3
+
+    - name: docker pull image
+      run: docker pull ${{ inputs.image_name }}

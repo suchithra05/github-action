@@ -2,6 +2,16 @@ name: build and deploy
 
 on:
    workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Select the environment to deploy to'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+          - dev
+          - sit
+          - prod
 env:
     image_name: hello-world
 jobs:

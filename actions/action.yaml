@@ -17,3 +17,4 @@ runs:
 
     - name: docker pull image
       run: docker pull ${{ inputs.image_name }}
+      shell: bash 

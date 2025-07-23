@@ -44,7 +44,7 @@ jobs:
         steps:
 
         - name: docker build
-          run: docker run  ${{ inputs.image_name }}
+          run: docker run  ${{ env.image_name }}
 
 
 

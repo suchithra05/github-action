@@ -19,7 +19,9 @@ jobs:
         
     deploy:
         needs: first_job
+        
         runs-on: ubuntu-latest
+        environment: prod
         steps:
 
         - name: docker build

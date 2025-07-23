@@ -7,15 +7,15 @@ on:
 jobs:
     first job:
         runner-on: ubuntu-latest
-    steps:
-    - name: checkout code
-      uses: actions/checkout@v4
+        steps:
+        - name: checkout code
+          uses: actions/checkout@v4
 
-    - name: welcome msg
-      run:  ech0 "my first job"
+        - name: welcome msg
+          run:  ech0 "my first job"
 
-    - name: list files
-      run: ls 
+        - name: list files
+          run: ls 
 
 
 

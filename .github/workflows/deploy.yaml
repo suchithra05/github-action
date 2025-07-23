@@ -5,8 +5,8 @@ on:
         branch:
             main
 jobs:
-    first job:
-        runner-on: ubuntu-latest
+    first_job:
+        runs-on: ubuntu-latest
         steps:
         - name: checkout code
           uses: actions/checkout@v4

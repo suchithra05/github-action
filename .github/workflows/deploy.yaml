@@ -16,7 +16,7 @@ env:
     image_name: hello-world
 
 concurrency:
-    group: deploy-${{ github.event.inputs.environment || 'dev' }}
+    group: deploy-${{ github.ref_name }}
     cancel-in-progress: true
 jobs:
     first_job:

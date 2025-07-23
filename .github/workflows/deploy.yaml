@@ -2,8 +2,8 @@ name: build and deploy
 
 on:
     push:
-        branch:
-            main
+        branches:
+            - main
 jobs:
     first_job:
         runs-on: ubuntu-latest
@@ -15,14 +15,15 @@ jobs:
           uses: docker/setup-buildx-action@v3 
 
         - name: docker build
-          run: docker build -t hello-world
+          run: docker pull hello-world
         
     deploy:
+        needs: first_job
         runs-on: ubuntu-latest
         steps:
 
         - name: docker build
-          run: docker run -d -p 8080:8080 hello-world
+          run: docker run  hello-world
 
 
 

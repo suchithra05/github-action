@@ -4,6 +4,8 @@ on:
     push:
         branches:
             - main
+env:
+    image_name: hello-world
 jobs:
     first_job:
         runs-on: ubuntu-latest
@@ -15,7 +17,7 @@ jobs:
           uses: docker/setup-buildx-action@v3 
 
         - name: docker build
-          run: docker pull hello-world
+          run: docker pull $image_name
         
     deploy:
         needs: first_job
@@ -23,7 +25,7 @@ jobs:
         steps:
 
         - name: docker build
-          run: docker run  hello-world
+          run: docker run  $image_name
 
 
 
